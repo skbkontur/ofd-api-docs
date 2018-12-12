@@ -3,7 +3,7 @@ tickets/<documentId>
 
 С помощью метода интегратор может получить отдельный фискальный документ в формате JSON-объекта.
 
-**GET <endpoint>/inns/<inn>/kkts/<kktRegId>/fss/<fsId>/tickets/<documentId>**
+**GET <endpoint>/v1/integration/inns/<inn>/kkts/<kktRegId>/fss/<fsId>/tickets/<documentId>**
 
 В запросе должны быть переданы следующие параметры:
 

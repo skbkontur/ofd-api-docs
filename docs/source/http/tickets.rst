@@ -3,7 +3,7 @@ tickets
 
 Метод возвращает все фискальные документы, полученные Контур.ОФД от кассы в заданном периоде времени.
 
-**GET <endpoint>/inns/<inn>/kkts/<kktRegId>/fss/<fsId>/tickets?dateFrom=<dateFrom>&dateTo=<dateTo>**
+**GET <endpoint>/v1/integration/inns/<inn>/kkts/<kktRegId>/fss/<fsId>/tickets?dateFrom=<dateFrom>&dateTo=<dateTo>**
 
 В запросе должны быть переданы следующие параметры:
 
