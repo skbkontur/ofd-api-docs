@@ -19,3 +19,14 @@
 
     http/tickets
     http/document
+
+
+.. toctree::
+    :name: Orgs
+    :maxdepth: 1
+    :caption: Работа с организациями и кассами
+
+    http/organizations
+    http/organization
+    http/cashboxes
+    http/cashbox
