@@ -7,7 +7,7 @@
 
 ::
 
-  auth.sid=77F90D0CF33SEF67SWRG87B9BBA7139F0CD76GRTY00931F2E1F0D; path=/; domain=.kontur;
+  auth.sid=77F90D0CF33SEF67SWRG87B9BBA7139F0CD76GRTY00931F2E1F0D; path=/; domain=kontur.ru;
 
 
 .. toctree::

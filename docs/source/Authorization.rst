@@ -7,6 +7,6 @@
 
 ::
 
-  ofd_api_key=031cg5h0-4d1e-135e-nh59-kuy61b12d71d; path=/; domain=.kontur;
+  ofd_api_key=031cg5h0-4d1e-135e-nh59-kuy61b12d71d; path=/; domain=kontur.ru;
 
 Если вы уже получили ключ доступа - используйте его в качестве значения куки (cookies) ofd_api_key. Если ключа у вас нет - смотрите раздел :doc:`GetAccess`.
