@@ -31,6 +31,7 @@ cashboxes/<kktRegId>
     "fiscalDrive": {
       "fiscalDriveNumber": ""   //заводской номер фискального накопителя (ФН)
     },
+    "salesPointName": "",       // название текущей точки продаж
     "permissionFrom": "",       //дата, с которой интегратор может получать документы
     "permissionTo": ""          //дата, по которую интегратор может получать документы
   }
@@ -46,6 +47,7 @@ cashboxes/<kktRegId>
     "fiscalDrive": {
       "fiscalDriveNumber": "1234567891234567"
     },
+    "salesPointName": "Четвертая точка продаж",       
     "permissionFrom": "2018-12-12T00:00:00",
     "permissionTo": "2018-12-14T14:14:41"
   }
