@@ -23,6 +23,7 @@ cashboxes
   [
     {
       "regNumber": "",            // регистрационный номер ККТ (РНМ)
+      "serialNumber": "",         // заводской номер ККТ
       "kpp": "",                  // КПП, указанный при подключении кассы в ЛК, либо КПП организации (в остальных случаях)
       "fiscalDrive": {
         "fiscalDriveNumber": ""   // заводской номер фискального накопителя (ФН)
@@ -41,11 +42,12 @@ cashboxes
   [
     {
       "regNumber": "0000800000000005",
+      "serialNumber": "00106700332501",
       "kpp": "669901001",
       "fiscalDrive": {
         "fiscalDriveNumber": "1234567891234567"
       },
-      "salesPointName": "Четвертая точка продаж",       
+      "salesPointName": "Четвертая точка продаж",
       "permissionFrom": "2018-12-12T00:00:00",
       "permissionTo": "2018-12-14T14:14:41"
     }
