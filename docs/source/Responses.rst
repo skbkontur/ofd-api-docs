@@ -10,14 +10,19 @@
 ::
 
   {
-     "errorCode": 400001,
-     "userMessage": {
-          	"ru": "",
-          	"en": "",
-      }
+    "errorCodeId": "",    // сообщение, конкретизирующее обнаруженную ошибку
+    "errorCode": "",      // код, конкретизирующий обнаруженную ошибку, это поле устарело, временно поддерживается
+    "moreInfo": "",       // ссылка на подробную документацию API
+    "userMessage": {      // поясняющий текст на русском и английском языках
+                "ru": "",
+                "en": "",
+    }
   }
 
-`errorCode` – код, конкретизирующий обнаруженную ошибку, `userMessage` – поясняющий текст на русском и английском языках.
+
+.. note::
+
+    Поле errorCode устарело, временно поддерживается, используйте errorCodeId.
 
 
 Возможные ответы, и соответствующие им errorCode
@@ -25,34 +30,66 @@
 
 ::
 
-  {
-     "HTTP response":
-      {
-        "400 Bad Request":
+  "HTTP response":
+    {
+      "400 Bad Request":
         {
-          "errorCode": 400001, //Переданный ИНН не соответствует формату
-          "errorCode": 400002, //Неверный временной интервал: дата начала периода больше даты конца, либо даты заданы неверным форматом
-          "errorCode": 400008  //Переданная дата не соответствует формату
+          "errorCode": 400000,
+          "errorCodeId": urn:error:request:invalid    // Некорректно указано значение параметра в запросе
         },
-        "401 Unauthorized":
         {
-          "errorCode": 401002, //Не указан идентификатор пользовательской сессии (auth.sid); Срок действия пользовательской сессии истек; Переданный идентификатор не соответствует формату
-          "errorCode": 401003  //Не указан ключ интегратора или значение не соответствует формату
+          "errorCode": 400002,
+          "errorCodeId": urn:error:request-parameter:period:invalid   // Неверный временной интервал: дата начала периода больше даты конца, либо даты заданы неверным форматом
         },
-        "403 Forbidden":
         {
-          "errorCode": 403001, //Несоответствие указанных ключа интегратора и идентификатора пользовательской сессии или не предоставлен доступ к организации с переданным ИНН
-          "errorCode": 403002  //Не предоставлен доступ к кассе с переданным РНМ
+          "errorCode": 400007,
+          "errorCodeId": urn:error:request-parameter:{имя параметра}:required   // Запрос должен содержать обязательный параметр
         },
-        "404 Not Found":
         {
-          "errorCode": 404001, //ФН с переданным номером не был установлен в кассу с переданным РНМ или документ не найден
-          "errorCode": null    //В запросе не указано значение обязательного параметра
+          "errorCode": 400008,
+          "errorCodeId":urn:error:request-parameter:date:invalid    // Переданная дата не соответствует формату
+        },
+      "401 Unauthorized":
+        {
+          "errorCode": 401002,
+          "errorCodeId":urn:error:request-parameter:auth-sid:required:access-denied   // Не указан идентификатор пользовательской сессии (auth.sid); Срок действия пользовательской сессии истек; Переданный идентификатор не соответствует формату
+        },
+        {
+          "errorCode": 401003,
+          "errorCodeId":urn:error:request-parameter:apikey:required:access-denied   // Не указан ключ интегратора (ofd_api_key)
+        },
+        {
+          "errorCode": 401003,
+          "errorCodeId": urn:error:request-parameter:apikey:unknown:access-denied   // Значение ключа интегратора не соответствует формату
+        },
+      "403 Forbidden":
+        {
+          "errorCode": 403000,
+          "errorCodeId": urn:error:access:forbidden   // Нет доступа к запрошенным данным
+        },
+        {
+          "errorCode": 403000,
+          "errorCodeId":  urn:error:access-to:cashboxdocuments:forbidden    // Не предоставлен доступ к кассе с переданным РНМ или указан период, на который не предоставлен доступ
+        },
+        {
+          "errorCode": 403000,
+          "errorCodeId":  urn:error:access-to:organizationdocuments:forbidden   // Нет доступа к организации или указан период, на который не предоставлен доступ
+        },
+        {
+          "errorCode": 403002,
+          "errorCodeId":urn:error:access-to:cashbox:forbidden   // Не предоставлен доступ к кассе с переданным РНМ
+        },
+        {
+          "errorCode": 403003
+          "errorCodeId": urn:error:access-to:organization:forbidden   // Нет доступа к организации
+        },
+      "404 Not Found":
+        {
+          "errorCode": 404000,
+          "errorCodeId": urn:error:organization:not-found   // Организация не найдена
+        },
+        {
+          "errorCode": 404001,
+          "errorCodeId": urn:error:documents:document:not-found   // ФН с переданным номером не был установлен в кассу с переданным РНМ или документ не найден
         }
-      }
-  }
-
-
-При получении в ответе ошибок 401-403, проверьте, верно ли переданы auth.sid и ofd_api_key, см. разделы :doc:`Authentication` и :doc:`Authorization`
-
-При получении в ответе ошибок 400, 404, проверьте, что верно указаны реквизиты ККТ и параметры используемого метода.
+    }

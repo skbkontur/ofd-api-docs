@@ -28,10 +28,27 @@ cashboxes/<kktRegId>
   {
     "regNumber": "",            // регистрационный номер ККТ (РНМ)
     "serialNumber": "",         // заводской номер ККТ
+    "address": "",              // адрес размещения ККТ (адрес осуществления расчетов между пользователем и покупателем)
+    "name": "",                 // наименование ККТ
+    "modelName": "",            // модель ККТ
     "kpp": "",                  // КПП, указанный при подключении кассы в ЛК, либо КПП организации (в остальных случаях)
-    "fiscalDrive": {
-      "fiscalDriveNumber": ""   // заводской номер фискального накопителя (ФН)
-    },
+    "fiscalDrive":              // текущий фискальный накопитель
+      {
+        "fiscalDriverNumber": "",         // заводской номер фискального накопителя
+        "earliestDocumentTimestamp": ""   // дата первого документа, который хранится у нас, для этого фискального накопителя
+      },
+    "fiscalDrives":             // список всех фискальных накопителей для кассы, в том числе и текущий
+      [
+        {
+          "fiscalDriverNumber": "",
+          "earliestDocumentTimestamp": ""
+        },
+        {
+          "fiscalDriverNumber": "",
+          "earliestDocumentTimestamp": ""
+        },
+        ...
+      ],
     "salesPointName": "",       // название текущей точки продаж
     "permissionFrom": "",       // дата, с которой интегратор может получать документы
     "permissionTo": ""          // дата, по которую интегратор может получать документы
@@ -45,10 +62,26 @@ cashboxes/<kktRegId>
   {
     "regNumber": "0000800000000005",
     "serialNumber": "00106700332501",
+    "address": "г. Екатеринбург. ул. Малопрудная 5",
+    "name": "Касса 1",
+    "modelName": "АТОЛ 30Ф",
     "kpp": "669901001",
-    "fiscalDrive": {
-      "fiscalDriveNumber": "1234567891234567"
-    },
+    "fiscalDrive":
+      {
+        "fiscalDriverNumber": "9492452823423233",
+        "earliestDocumentTimestamp": "2019-10-10T00:00:00"
+      },
+    "fiscalDrives":
+      [
+        {
+          "fiscalDriverNumber": "4393456832322943",
+          "earliestDocumentTimestamp": "2017-11-12T00:00:00"
+        },
+        {
+          "fiscalDriverNumber": "9492452823423233",
+          "earliestDocumentTimestamp": "2019-10-10T00:00:00"
+        }
+      ],
     "salesPointName": "Четвертая точка продаж",
     "permissionFrom": "2018-12-12T00:00:00",
     "permissionTo": "2018-12-14T14:14:41"
