@@ -44,7 +44,7 @@
 .rst-content .reference.internal:visited {color: #2980B9}
 .rst-content a:visited {color: #2980B9}
 
-/* fix linegeight in navigation */
+/* fix lineheight in navigation */
 .toctree-l1 > a {line-height: 25px}
 .toctree-l2 > a {padding-top: 0.6045em !important; padding-bottom: 0.6045em !important;}
 
