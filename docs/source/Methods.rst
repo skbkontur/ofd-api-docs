@@ -11,15 +11,23 @@
     Auth/approve-cert
     Auth/authenticate-by-pass
 
-
 .. toctree::
     :name: Docs
     :maxdepth: 1
     :caption: Работа с документами
 
-    http/tickets
+    http/documents
     http/document
+    http/tickets
 
+.. toctree::
+    :name: Stat
+    :maxdepth: 1
+    :caption: Статистика
+
+    http/cashboxes-statistics-by-days
+    http/cashboxes-statistics-by-shifts
+	
 
 .. toctree::
     :name: Orgs
