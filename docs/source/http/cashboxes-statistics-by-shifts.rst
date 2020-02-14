@@ -36,9 +36,9 @@ cashboxes/statistics/by-shifts
         {
           Информация по смене
         },
-           {
-              Информация по смене
-          }
+        {
+          Информация по смене
+        }
       ]
   }
 
@@ -47,29 +47,29 @@ cashboxes/statistics/by-shifts
 
 ::
 
-	{
-  "shifts": [
+  {
+    "shifts": [
     {
-      "shiftNumber": 103,				//Номер смены
-      "shiftOpen": "2019-11-19T10:00:00Z",	// Дата и время открытия
-      "shiftClose": "2019-11-19T16:00:01Z",	// Дата и время закрытия (только если смена закрыта)
-      "buy": {					// Покупка. Информация по чекам с признаком «расход»
-        "cashlessTotal": 245754,			// Сумма безналичными в копейках
-        "cashTotal": 360542,			// Сумма наличными в копейках
-        "total": 606296,				// Общая сумма в копейках
-        "totalWithNds0": 0,			// Сумма НДС 0% в копейках
-        "totalWithNdsFree": 0,			// Сумма без НДС в копейках
-        "count": 14,				// Количество чеков
+      "shiftNumber": 103,                      // Номер первой смены
+      "shiftOpen": "2019-11-19T10:00:00Z",     // Дата и время открытия
+      "shiftClose": "2019-11-19T16:00:01Z",    // Дата и время закрытия (только если смена закрыта)
+      "buy": {                                 // Покупка. Информация по чекам с признаком Расход
+        "cashlessTotal": 245754,               // Сумма безналичными в копейках
+        "cashTotal": 360542,                   // Сумма наличными в копейках
+        "total": 606296,                       // Общая сумма в копейках
+        "totalWithNds0": 0,                    // Сумма НДС 0% в копейках
+        "totalWithNdsFree": 0,                 // Сумма без НДС в копейках
+        "count": 14,                           // Количество чеков
         "nds": {
-          "rate10": 0,				// Сумма НДС 10% в копейках
-          "calculatedWithRate10": 0,		// Сумма НДС 10/110 в копейках
-          "rate18": 0,				// Сумма НДС 18% в копейках
-          "calculatedWithRate18": 0,		// Сумма НДС 18/118 в копейках
-          "rate20": 101051,				// Сумма НДС 20% в копейках
-          "calculatedWithRate20": 0		// Сумма НДС 20/120 в копейках
-        }
+          "rate10": 0,                         // Сумма НДС 10% в копейках
+          "calculatedWithRate10": 0,           // Сумма НДС 10/110 в копейках
+          "rate18": 0,                         // Сумма НДС 18% в копейках
+          "calculatedWithRate18": 0,           // Сумма НДС 18/118 в копейках
+          "rate20": 101051,                    // Сумма НДС 20% в копейках
+          "calculatedWithRate20": 0            // Сумма НДС 20/120 в копейках
+          }
       },
-      "returnBuy": {				// Вовзрат покупки. Информация по чекам с признаком «возврат расхода»
+      "returnBuy": {                           // Возврат покупки. Информация по чекам с признаком Возврат расхода
         "cashlessTotal": 37202,
         "cashTotal": 132320,
         "total": 169522,
@@ -83,9 +83,9 @@ cashboxes/statistics/by-shifts
           "calculatedWithRate18": 0,
           "rate20": 28253,
           "calculatedWithRate20": 0
-        }
+          }
       },
-      "sell": {					// Продажа. Информация по чекам с признаком «приход»
+      "sell": {                                // Продажа. Информация по чекам с признаком Приход
         "cashlessTotal": 2862884,
         "cashTotal": 3316499,
         "total": 6179383,
@@ -99,9 +99,9 @@ cashboxes/statistics/by-shifts
           "calculatedWithRate18": 0,
           "rate20": 1029913,
           "calculatedWithRate20": 0
-        }
+          }
       },
-      "returnSell": {				// Возврат продажи. Информация по чекам с признаком «возврат прихода»
+      "returnSell": {                         // Возврат продажи. Информация по чекам с признаком Возврат прихода
         "cashlessTotal": 414383,
         "cashTotal": 171692,
         "total": 586075,
@@ -115,11 +115,11 @@ cashboxes/statistics/by-shifts
           "calculatedWithRate18": 0,
           "rate20": 97681,
           "calculatedWithRate20": 0
-        }
+          }
       }
     },
     {
-      "shiftNumber": 104,				//Номер смены 
+      "shiftNumber": 104,                    // Номер второй смены
       "shiftOpen": "2019-11-19T16:01:00Z",
       "shiftClose": "2019-11-19T22:00:01Z",
       "buy": {
@@ -136,7 +136,7 @@ cashboxes/statistics/by-shifts
           "calculatedWithRate18": 0,
           "rate20": 121665,
           "calculatedWithRate20": 0
-        }
+          }
       },
       "returnBuy": {
         "cashlessTotal": 129720,
@@ -152,7 +152,7 @@ cashboxes/statistics/by-shifts
           "calculatedWithRate18": 0,
           "rate20": 37010,
           "calculatedWithRate20": 0
-        }
+          }
       },
       "sell": {
         "cashlessTotal": 3363914,
@@ -168,7 +168,7 @@ cashboxes/statistics/by-shifts
           "calculatedWithRate18": 0,
           "rate20": 1062367,
           "calculatedWithRate20": 0
-        }
+          }
       },
       "returnSell": {
         "cashlessTotal": 303281,
@@ -184,10 +184,10 @@ cashboxes/statistics/by-shifts
           "calculatedWithRate18": 0,
           "rate20": 110074,
           "calculatedWithRate20": 0
+          }
         }
       }
-    }
-  ]
+    ]
   }
 
 Для получения по кассе и периоду информации в разрезе дней, используйте метод :doc:`cashboxes-statistics-by-days`
