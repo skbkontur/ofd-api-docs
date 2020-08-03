@@ -28,8 +28,8 @@ API Контур.ОФД позволяет получать информацию
     Доступные методы <Methods>
     Коды и статусы ответов <Responses>
     Структуры данных <Structures>
-    Примеры использования <Samples>
-
+    
+	
 .. toctree::
     :name: Support
     :maxdepth: 1
