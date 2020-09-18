@@ -5,7 +5,7 @@ cashboxes/<kktRegId>
 
 **GET <endpoint>/v2/organizations/<organizationId>/cashboxes/<kktRegId>**
 
-В запросе должен быть переданы слудющие параметры:
+В запросе должен быть переданы следующие параметры:
 
 - `organizationId`: обязательный, уникальный идентификатор организации
 - `kktRegId`: обязательный, регистрационный номер кассы (РНМ)
@@ -75,7 +75,7 @@ cashboxes/<kktRegId>
     "serialNumber": "00106700332501",
     "address": "г. Екатеринбург. ул. Малопрудная 5",
     "addresses":[
-	  			{                                    
+                {                                    
                 "address":"г.Москва Ул. победы д52", 
                 "startDate":"2019-09-12T00:00:00"     
                 },
