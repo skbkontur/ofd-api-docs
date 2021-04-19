@@ -56,7 +56,7 @@
         },
         {
           "errorCode": 401003,
-          "errorCodeId":urn:error:request-parameter:apikey:required:access-denied   // Не указан ключ интегратора (ofd_api_key)
+          "errorCodeId":urn:error:request-parameter:apikey:required:access-denied   // Не указан ключ интегратора
         },
         {
           "errorCode": 401003,
