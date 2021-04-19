@@ -17,8 +17,10 @@ organizations/<organizationId>
   GET /v2/organizations/c2e3a34c-823f-4b1e-a9g1-d94fa40c22a6 HTTP/1.1
   Host: ofd-project.kontur.ru:11002
   Cache-Control: no-cache
-  ofd_api_key=031c1120-9hhe-435e-5h08-43091hhcd71d;auth.sid=FEC4454C200EC54BJ7GE4PO0011121C4E7E79C795HHTG395JD16C002EG125CFA;
+  X-Kontur-Ofd-ApiKey: 031c1890-9hhe-435e-5h59-43091hhcd71d
+  Cookie: auth.sid=FEC4B58C200EC54BJ7GE4PO0032821C4E7E79C795HHAS395JD16C002EC125CFA
 
+**Обратите внимание, что X-Kontur-Ofd-ApiKey и Cookie передаются в заголовках.**
 
 В теле ответа возвращаются реквизиты организации в виде JSON-объекта следующей структуры:
 
