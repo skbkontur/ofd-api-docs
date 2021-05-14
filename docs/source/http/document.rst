@@ -23,7 +23,6 @@ tickets/<documentId>
   X-Kontur-Ofd-ApiKey: 031c1890-9hhe-435e-5h59-43091hhcd71d
   Authorization: auth.sid 77F90D0CF33SEF67SWRG87B9BBA7139F0CD76GRTY00931F2E1F0D
 
-**Обратите внимание, что X-Kontur-Ofd-ApiKey и Cookie передаются в заголовках.**
 
 Для получения списка организаций и касс, к которым у пользователя есть доступ, необходимо использовать методы :doc:`organizations` и :doc:`cashboxes`.
 

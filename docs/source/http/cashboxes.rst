@@ -16,8 +16,6 @@ cashboxes
   X-Kontur-Ofd-ApiKey: 031c1890-9hhe-435e-5h59-43091hhcd71d
   Authorization: auth.sid 77F90D0CF33SEF67SWRG87B9BBA7139F0CD76GRTY00931F2E1F0D
 
-**Обратите внимание, что X-Kontur-Ofd-ApiKey и Cookie передаются в заголовках.**
-
 В теле ответа возвращаются кассы организации с их реквизитами в виде массива JSON-объектов следующей структуры:
 
 ::
