@@ -70,7 +70,8 @@ tickets (устарел)
             "kktRegId": "0000000003065868    ",
             "fiscalDriveNumber": "99990788607     ",
             "fiscalDocumentNumber": 39089,
-            "fiscalSign": 2034496394
+            "fiscalSign": 2034496394,
+            "id": "00000000-0000-0000-0000-000000000000"
         }
     },
     {
@@ -100,7 +101,8 @@ tickets (устарел)
             "cashTotalSum": 11336,
             "ecashTotalSum": 0,
             "fiscalDocumentNumber": 39090,
-            "fiscalSign": 3635260533
+            "fiscalSign": 3635260533,
+            "id": "00000000-0000-0000-0000-000000000000"
         }
     }
   ]

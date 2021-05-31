@@ -8,21 +8,39 @@ documents
 Метод возвращает все фискальные документы, полученные Контур.ОФД от кассы, на заданную дату.
 
 
-**GET <endpoint>/v2/organizations/<organizationId>/cashboxes/<kktRegId>/documents?date=21.11.2019**
+**GET <endpoint>/v2/organizations/<organizationId>/cashboxes/<kktRegId>/documents?date=<date>&types=<documentsType>**
 
 В запросе должны быть переданы следующие параметры:
 
 - `organizationId`: обязательный, уникальный идентификатор организации, документы которой необходимо получить
 - `kktRegId`: обязательный, РНМ кассы, документы которой необходимо получить
 - `date`: обязательный, дата формирования фискальных документов, за которую необходимо получить документы
+- `types`: необязательный, типы фискальных документов, для выдачи конкретных типов документов
 
 Допустимые форматы для параметра `date`: гггг-мм-дд, гггг.мм.дд, дд-мм-гггг, дд.мм.гггг.
+
+Типы фискальных документов для параметра `types`:
+
+
+* `fiscalReport` - отчет о регистрации,
+* `fiscalReportCorrection` - отчет об изменении параметров регистрации,
+* `currentStateReport` - отчет о текущем состоянии расчетов,
+* `openShift` - отчет об открытии смены,
+* `closeShift` - отчет о закрытии смены,
+* `receipt` - чеки,
+* `bso`- бсо,
+* `receiptCorrection` - чеки коррекции,
+* `bsoCorrection` - бсо коррекции,
+* `closeArchive` - отчет о закрытии фискального накопителя.
+
+Есть возможность указывать несколько типов фискальных документов в одном запросе через запятую. 
+Если этот параметр не указывать, то по умолчанию в ответе будут все типы фискальных документов.
 
 Пример запроса:
 
 ::
 
-  GET v2/organizations/c2e3a34c-823f-4b1e-a9g1-d94fa40c22a6/cashboxes/0000000003065868/documents?date=27.08.2018 HTTP/1.1
+  GET T v2/organizations/c2e3a34c-823f-4b1e-a9g1-d94fa40c22a6/cashboxes/0000000003065868/documents?date=27.08.2018types=fiscalReport,fiscalReportCorrection,currentStateReport,openShift,closeShift,receipt,receiptCorrection,closeArchive HTTP/1.1
   Host: ofd-project.kontur.ru:11002
   Cache-Control: no-cache
   X-Kontur-Ofd-ApiKey: 031c1890-9hhe-435e-5h59-43091hhcd71d
@@ -68,7 +86,8 @@ documents
             "kktRegId": "0000000003065868    ",
             "fiscalDriveNumber": "99990788607     ",
             "fiscalDocumentNumber": 39089,
-            "fiscalSign": 2034496394
+            "fiscalSign": 2034496394,
+            "id": "00000000-0000-0000-0000-000000000000"
         }
     },
     {
@@ -98,29 +117,11 @@ documents
             "cashTotalSum": 11336,
             "ecashTotalSum": 0,
             "fiscalDocumentNumber": 39090,
-            "fiscalSign": 3635260533
+            "fiscalSign": 3635260533,
+            "id": "00000000-0000-0000-0000-000000000000"
         }
     }
   ]
-
-
-Возможные значения типов ФД
----------------------------
-
-::
-
-  {
-    "fiscalReport",           //Отчет о регистрации
-    "fiscalReportCorrection", //Отчёт об изменении параметров регистрации
-    "openShift",              //Отчет об открытии смены
-    "currentStateReport",     //Отчёт о текущем состоянии расчетов
-    "receipt",                //Кассовый чек
-    "receiptCorrection",      //Кассовый чек коррекции
-    "bso",                    //БСО
-    "bsoCorrection",          //Бланк строгой отчетности коррекции
-    "closeShift",             //Отчёт о закрытии смены
-    "closeArchive"            //Отчёт о закрытии фискального накопителя
-  }
 
 
 Набор полей для каждого типа фискальных документов приведен в разделе :doc:`../Structures`.
