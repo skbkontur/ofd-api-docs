@@ -3,7 +3,7 @@ documents/<documentId>
 
 С помощью метода интегратор может получить отдельный фискальный документ в формате JSON-объекта.
 
-**GET <endpoint>/v2/organizations/<organizationId>/statistics/cash-receipt/by-days?from=<dateFrom>&to=<dateTo>**
+**GET <endpoint>/v2/organizations/<organizationId>/cashboxes/<kktRegId>/documents/<documentId>**
 
 В запросе должны быть переданы следующие параметры:
 
