@@ -205,4 +205,6 @@ cashboxes/statistics/by-shifts
   }
 
 
-Для получения по кассе и периоду информации в разрезе дней, используйте метод :doc:`cashboxes-statistics-by-days`
+Для получения по кассе и периоду информации в разрезе дней используйте метод :doc:`cashboxes-statistics-by-days`
+
+Для получения по организации и периоду информации в разрезе дней используйте метод :doc:`organizations-statistics-by-days`

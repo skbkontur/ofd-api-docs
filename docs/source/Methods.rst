@@ -16,7 +16,9 @@
     :maxdepth: 1
     :caption: Работа с документами
 
+    http/documents-by-period
     http/documents
+    http/documentId
     http/document
     http/tickets
 
@@ -27,6 +29,7 @@
 
     http/cashboxes-statistics-by-days
     http/cashboxes-statistics-by-shifts
+    http/organizations-statistics-by-days
 	
 
 .. toctree::
